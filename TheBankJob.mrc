@@ -51,8 +51,8 @@ dialog tbj {
   edit "", 43, 300 240 100 21, center
   edit "", 44, 140 260 100 21, center
   edit "", 45, 300 260 100 21, center
-  edit "", 46, 140 280 100 21, center
-  edit "", 47, 300 280 100 21, center
+  text "0.00", 46, 140 280 100 21, center
+  text "0.00", 47, 300 280 100 21, center
   text "Инд. таймер", 48, 10 300 120 16, center
   edit "60", 49, 175 300 40 21, center
   edit "60", 50, 335 300 40 21, center
@@ -158,6 +158,7 @@ on 1:dialog:tbj:sclick:*: {
   if ($did == 23) {
     inc %tbj_round
     did -ra tbj 24 %tbj_round
+    set %tbj_boxes 01 02 03 04 05 06 07 08 09 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25
   }
 
   if ($did == 25) {
@@ -176,6 +177,12 @@ on 1:dialog:tbj:sclick:*: {
       elseif (%tbj_round == 3) {
         set %tbj_total_summ $calc(1000 + $did(tbj,42) + $did(tbj,43) + $did(tbj,44) + $did(tbj,45))
       }
+      if (%tbj_round == 1) {
+        set %tbj_time 90
+      }
+      if (%tbj_round == 2) {
+        set %tbj_time 120
+      }     
       splay tbj_lets_play.mp3
       msg %tbj_chan 0,0play tbj_lets_play.mp3
     }
@@ -191,12 +198,11 @@ on 1:dialog:tbj:sclick:*: {
     set %total 1000
     set %max_range 1000
     set %values
-    if (%tbj_round == 1) && (%tbj_round == 2) {
-      while ($numtok(%values, 32) != 16) {
-        var %element $rand(1, %max_range)
-        set %values %values %element
-        set %max_range $calc(%max_range - %element)
-      }
+    if (%tbj_round == 1) || (%tbj_round == 2) {
+      ; while ($numtok(%values, 32) != 16) {
+      ; var %element $rand(1, %max_range)
+      ; set %values %values %element
+      ; set %max_range $calc(%max_range - %element)
     }
     elseif (%tbj_round == 3) {
       while ($numtok(%values, 32) != 12) {
@@ -204,6 +210,18 @@ on 1:dialog:tbj:sclick:*: {
         set %values %values %element
         set %max_range $calc(%max_range - %element)
       }
+    }
+  }
+
+  if ($did == 29) {
+    if ($did(tbj, 29).text == Время) {
+      did -ra tbj 29 Cont
+      splay tbj_timer.mp3
+      msg %tbj_chan 12,2( $wordline(00,02,05,$f_time(%tbj_time),2) 12,2)0,0play tbj_timer.mp3
+      timergame
+    }
+    elseif ($did(tbj, 6).text == Cont) {
+      did -ra tbj 6 +m
     }
   }
 
@@ -220,12 +238,12 @@ on 1:dialog:tbj:sclick:*: {
   }
 
   if ($did == 32) {
-    msg %tbj_chan 96,96....60|94,94.........................88,88|88,88............36|94,94............94,94.............60,96|96,96....
-    msg %tbj_chan 96,96....60|94,94...94,88[88.980188.94]94,94...36|94,94...94,88[88.980188.94]94,94...36|94,94...94,88[88.980188.94]94,94...36|94,94...94,88[88.980188.94]94,94...36|94,94...94,88[88.980188.94]94,94...60,96|96,96....
-    msg %tbj_chan 96,96....60|94,94...94,88[88.980188.94]94,94...36|94,94...94,88[88.980188.94]94,94...36|94,94...94,88[88.980188.94]94,94...36|94,94...94,88[88.980188.94]94,94...36|94,94...94,88[88.980188.94]94,94...60,96|96,96....
-    msg %tbj_chan 96,96....60|94,94...94,88[88.980188.94]94,94...36|94,94...94,88[88.980188.94]94,94...36|94,94...94,88[88.980188.94]94,94...36|94,94...94,88[88.980188.94]94,94...36|94,94...94,88[88.980188.94]94,94...60,96|96,96....
-    msg %tbj_chan 96,96....60|94,94...94,88[88.980188.94]94,94...36|94,94...94,88[88.980188.94]94,94...36|94,94...94,88[88.980188.94]94,94...36|94,94...94,88[88.980188.94]94,94...36|94,94...94,88[88.980188.94]94,94...60,96|96,96....
-    msg %tbj_chan 96,96....60|94,94...94,88[88.980188.94]94,94...36|94,94...94,88[88.980188.94]94,94...36|94,94...94,88[88.980188.94]94,94...36|94,94...94,88[88.980188.94]94,94...36|94,94...94,88[88.980188.94]94,94...60,96|96,96....
+    msg %tbj_chan 96,96....60|94,94.........................88,88|88,88 $+ $wordline(52,88,12,$f_num($f_money(%tbj_total_summ)) WMR,3) $+ 88|94,94............94,94.............60,96|96,96....
+    msg %tbj_chan 96,96....60|94,94...94,88[88.98 $+ $gettok(%tbj_boxes,1,32) $+ 88.94]94,94...36|94,94...94,88[88.98 $+ $gettok(%tbj_boxes,2,32) $+ 88.94]94,94...36|94,94...94,88[88.98 $+ $gettok(%tbj_boxes,3,32) $+ 88.94]94,94...36|94,94...94,88[88.98 $+ $gettok(%tbj_boxes,4,32) $+ 88.94]94,94...36|94,94...94,88[88.98 $+ $gettok(%tbj_boxes,5,32) $+ 88.94]94,94...60,96|96,96....
+    msg %tbj_chan 96,96....60|94,94...94,88[88.98 $+ $gettok(%tbj_boxes,6,32) $+ 88.94]94,94...36|94,94...94,88[88.98 $+ $gettok(%tbj_boxes,7,32) $+ 88.94]94,94...36|94,94...94,88[88.98 $+ $gettok(%tbj_boxes,8,32) $+ 88.94]94,94...36|94,94...94,88[88.98 $+ $gettok(%tbj_boxes,9,32) $+ 88.94]94,94...36|94,94...94,88[88.98 $+ $gettok(%tbj_boxes,10,32) $+ 88.94]94,94...60,96|96,96....
+    msg %tbj_chan 96,96....60|94,94...94,88[88.98 $+ $gettok(%tbj_boxes,11,32) $+ 88.94]94,94...36|94,94...94,88[88.98 $+ $gettok(%tbj_boxes,12,32) $+ 88.94]94,94...36|94,94...94,88[88.98 $+ $gettok(%tbj_boxes,13,32) $+ 88.94]94,94...36|94,94...94,88[88.98 $+ $gettok(%tbj_boxes,14,32) $+ 88.94]94,94...36|94,94...94,88[88.98 $+ $gettok(%tbj_boxes,15,32) $+ 88.94]94,94...60,96|96,96....
+    msg %tbj_chan 96,96....60|94,94...94,88[88.98 $+ $gettok(%tbj_boxes,16,32) $+ 88.94]94,94...36|94,94...94,88[88.98 $+ $gettok(%tbj_boxes,17,32) $+ 88.94]94,94...36|94,94...94,88[88.98 $+ $gettok(%tbj_boxes,18,32) $+ 88.94]94,94...36|94,94...94,88[88.98 $+ $gettok(%tbj_boxes,19,32) $+ 88.94]94,94...36|94,94...94,88[88.98 $+ $gettok(%tbj_boxes,20,32) $+ 88.94]94,94...60,96|96,96....
+    msg %tbj_chan 96,96....60|94,94...94,88[88.98 $+ $gettok(%tbj_boxes,21,32) $+ 88.94]94,94...36|94,94...94,88[88.98 $+ $gettok(%tbj_boxes,22,32) $+ 88.94]94,94...36|94,94...94,88[88.98 $+ $gettok(%tbj_boxes,23,32) $+ 88.94]94,94...36|94,94...94,88[88.98 $+ $gettok(%tbj_boxes,24,32) $+ 88.94]94,94...36|94,94...94,88[88.98 $+ $gettok(%tbj_boxes,25,32) $+ 88.94]94,94...60,96|96,96....
   }
 
   if ($did == 34) {
@@ -245,13 +263,105 @@ on 1:dialog:tbj:sclick:*: {
       splay tbj_money_box.mp3
       msg %tbj_chan 54,34(98 $+ $wordline(98,34,3,$did(33),3)  96,9694[ $+ $wordline(88,96,12,$f_money($gettok(%tbj_values,$did(33),32)) WMR,2) $+ 94] 0,0play tbj_money_box.mp3
     }
+    set %tbj_boxes $puttok(%tbj_boxes, 88.., $did(33), 32)
   }
 
   if ($did == 57) {
-    msg %tbj_chan 98,98...........94,88[...sashajackson...].[...sashajackson...]
-    msg %tbj_chan 94,88[ $wordline(94,88,7,Раунд 1,2) 94][...sashajackson...].[...sashajackson...]
-    msg %tbj_chan 94,88[ $wordline(94,88,7,Раунд 2,2) 94][...sashajackson...].[...sashajackson...]
-    msg %tbj_chan 94,88[ $wordline(94,88,7,Итого,2) 94][...sashajackson...].[...sashajackson...]
+    msg %tbj_chan 98,98...........94,88[...sashajackson...]98,98.94,88[...sashajackson...]
+    msg %tbj_chan 94,88[ $wordline(94,88,7,Раунд 1,2) 94]54,34(98 $+ $wordline(98,34,18,$f_num($f_money($did(42))) WMR,2) $+ 54)98,98.54,34(98 $+ $wordline(98,34,18,$f_num($f_money($did(43))) WMR,2) $+ 54)
+    msg %tbj_chan 94,88[ $wordline(94,88,7,Раунд 2,2) 94]54,34(98 $+ $wordline(98,34,18,$f_num($f_money($did(44))) WMR,2) $+ 54)98,98.54,34(98 $+ $wordline(98,34,18,$f_num($f_money($did(45))) WMR,2) $+ 54)
+    msg %tbj_chan 94,88[ $wordline(94,88,7,Итого,2) 94]54,34(98 $+ $wordline(98,34,18,$f_num($f_money($calc($did(42) + $did(44)))) WMR,2) $+ 54)98,98.54,34(98 $+ $wordline(98,34,18,$f_num($f_money($calc($did(43) + $did(45)))) WMR,2) $+ 54)
+    did -ra tbj 46 $calc($did(42) + $did(44))
+    did -ra tbj 47 $calc($did(43) + $did(45))
   }
 
+}
+
+alias -l timergame {
+  if (%tbj_round == 1) {
+    set %j 90
+    set %p 0
+    set %v 1000
+    set %b 1000
+    timer1 90 1 minus2
+    timer2 90 1 didushka2
+  }
+  elseif (%tbj_round == 2) {
+    set %j 120
+    set %p 0
+    set %v 1000
+    set %b 1000
+    timer1 120 1 minus2
+    timer2 120 1 didushka2
+  }
+}
+
+alias -l minus2 {
+  set %tbj_time $puttok(%tbj_time, $calc(%tbj_time - 1), 1, 32)
+  if (%tbj_time == 90) || (%tbj_time == 120) {
+    msg %tbj_chan 12,2( $wordline(00,02,05,$f_time(%tbj_time),2) 12,2)
+  }
+  elseif (%tbj_time == 0) {
+    splay tbj_outoftime.mp3  
+    msg %tbj_chan 12,2( $wordline(00,02,05,$f_time(%tbj_time),2) 12,2)00,99play tbj_outoftime.mp3
+    timers off
+  }
+  if (%tbj_time == 10) {
+    splay tbj_last10secs.mp3
+    msg %tbj_chan 12,2( $wordline(00,02,05,$f_time(%tbj_time),2) 12,2)0,0play tbj_last10secs.mp3
+  }
+}
+
+alias -l didushka2 {
+  did -ra tbj 28 $f_time(%tbj_time,s)
+}
+
+alias -l f_time {
+  ;алиас возвращает время в отформатированном виде. Принимает в аргументы как количество секунд, так и таймстамп в некорректном виде. Например,
+  ;$f_time(999) > 16:39
+  ;$f_time(999,H:nn:ss) > 0:16:39
+  ;$f_time(1:1,n:ss) > 1:01
+  var %time $strip($1)
+  var %format n:ss
+  if ($numtok(%time,58) == 3) %format = H:nn:ss
+  if ($len($2) > 0) %format = $2
+  var %time2 0
+  var %i 1
+  if ($numtok(%time,58) > 1) {
+    while (%i <= $numtok(%time,58)) {
+      %time2 = $calc(  60 ^ $calc($numtok(%time,58) - %i) * $gettok(%time,%i,58) + %time2  )
+      inc %i
+    }
+  }
+  else %time2 = %time
+  if (%time2 > 0) {
+    if ($pos(%format,H) > 0) return $duration(%time2,3)
+    else return $asctime(%time2,%format)
+  }
+  else return 0
+}
+
+alias -l f_time2 {
+  ;алиас возвращает время в отформатированном виде. Принимает в аргументы как количество секунд, так и таймстамп в некорректном виде. Например,
+  ;$f_time(999) > 16:39
+  ;$f_time(999,H:nn:ss) > 0:16:39
+  ;$f_time(1:1,n:ss) > 1:01
+  var %time $strip($1)
+  var %format n:ss
+  if ($numtok(%time,58) == 3) %format = H:nn:ss
+  if ($len($2) > 0) %format = $2
+  var %time2 0
+  var %i 1
+  if ($numtok(%time,58) > 1) {
+    while (%i <= $numtok(%time,58)) {
+      %time2 = $calc(  60 ^ $calc($numtok(%time,58) - %i) * $gettok(%time,%i,58) + %time2  )
+      inc %i
+    }
+  }
+  else %time2 = %time
+  if (%time2 > 0) {
+    if ($pos(%format,H) > 0) return $duration(%time2,3)
+    else return $asctime(%time2,%format)
+  }
+  else return 0
 }
