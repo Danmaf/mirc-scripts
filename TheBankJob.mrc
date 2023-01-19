@@ -1,367 +1,632 @@
 dialog tbj {
   title "New Project"
-  size -1 -1 640 430
+  size -1 -1 300 530
   option pixels
 
-  box "Group Box", 1, 0 0 640 50
-  button "Начать игру", 2, 10 20 75 25
-  button "Титры", 3, 90 20 45 25
-  button "Фон", 4, 140 20 35 25
-  button "Правила игры", 5, 180 20 85 25
-  button "+m", 6, 270 20 45 25
-  button "Перерыв (с / на)", 7, 320 20 95 25
-  edit "", 8, 420 20 100 21
+  box "Для ведущего", 1, 0 0 300 50
+  button "Start", 2, 10 20 45 25
+  button "End", 3, 60 20 35 25
+  button "bg", 4, 100 20 25 25
+  button "+m", 5, 130 20 25 25
+  button "-m", 6, 160 20 25 25
+  edit "", 7, 190 20 100 21
 
-  box "Group Box", 9, 0 50 640 70
-  edit "", 10, 10 70 100 21
-  edit "", 11, 120 70 100 21
-  edit "", 12, 230 70 100 21
-  edit "", 13, 340 70 100 21
-  edit "", 14, 10 90 100 21
-  edit "", 15, 120 90 100 21
-  edit "", 16, 230 90 100 21
-  edit "", 17, 340 90 100 21
-  button "Пригласить всех", 18, 450 60 105 15
-  button "Статистика", 19, 450 80 105 15
-  button "Убрать игрока", 20, 450 100 105 15
-  button "Покинул", 21, 560 60 75 55
+  box "Статитика", 8, 0 50 300 150
+  edit "", 9, 10 70 100 21
+  edit "", 10, 10 90 100 21
+  edit "", 11, 10 110 100 21
+  edit "", 12, 10 130 100 21
+  edit "", 13, 120 70 50 21
+  edit "", 14, 120 90 50 21
+  edit "", 15, 120 110 50 21
+  edit "", 16, 120 130 50 21
+  button "+v", 17, 10 160 25 25
+  button "Выпроводить", 18, 40 160 85 25
+  button "Статистика", 19, 130 160 75 25
+  button "+money", 20, 180 70 55 75
+  button "-money", 21, 240 70 55 75
+  button "Таймеры", 22, 210 160 85 25
 
-  box "Group Box", 22, 0 120 640 90
-  button ">", 23, 10 140 15 25
-  edit "0", 24, 30 140 20 21
-  button "Начать раунд", 25, 50 140 85 25
-  button "MD5", 26, 140 140 35 25
-  button "Показать строчку", 27, 180 140 105 25
-  edit "", 28, 290 140 30 21, center
-  button "Время", 29, 320 140 45 25
-  button "V", 30, 370 140 25 25
-  button "X", 31, 400 140 25 25
-  button "Ячейки", 32, 430 140 55 25
-  edit "", 33, 490 140 30 21, center
-  button "Открыть ячейку", 34, 520 140 105 25
-  button "Зачислить", 35, 10 170 295 25
-  button "Отобрать", 36, 310 170 165 25
-  button "Украсть", 37, 480 170 145 25
+  box "Игровой процесс", 23, 0 200 300 80
+  button ">", 24, 10 220 25 25
+  edit "0", 25, 40 220 20 21
+  button "Start round", 26, 60 220 75 25
+  button "MD5", 27, 140 220 35 25
+  button "STR", 28, 180 220 35 25
+  button "Boxes", 29, 220 220 75 25
+  button "Timer", 30, 10 250 35 25
+  edit "1:15", 31, 50 250 40 21
+  button "5", 32, 130 250 15 25
+  button "V", 33, 150 250 25 25
+  button "X", 34, 180 250 25 25
+  edit "25", 35, 210 250 30 21
+  button "Open", 36, 240 250 55 25
+  button "Cont", 63, 90 250 35 25
 
-  box "Group Box", 38, 0 210 640 220
-  text "Результаты 1 раунда", 39, 10 240 120 16, center
-  text "Результаты 2 раунда", 40, 10 260 120 16, center
-  text "Общая сумма", 41, 10 280 120 16, center
-  edit "", 42, 140 240 100 21, center
-  edit "", 43, 300 240 100 21, center
-  edit "", 44, 140 260 100 21, center
-  edit "", 45, 300 260 100 21, center
-  text "0.00", 46, 140 280 100 21, center
-  text "0.00", 47, 300 280 100 21, center
-  text "Инд. таймер", 48, 10 300 120 16, center
-  edit "60", 49, 175 300 40 21, center
-  edit "60", 50, 335 300 40 21, center
-  button "Старт", 51, 150 330 75 25
-  button "Старт", 52, 310 330 75 25
-  button "V", 53, 150 360 25 25
-  button "X", 54, 200 360 25 25
-  button "V", 55, 310 360 25 25
-  button "X", 56, 360 360 25 25
-  button "Статистика", 57, 150 390 235 25
+  box "3 раунд", 37, 0 280 300 80
+  button "Start timer1", 38, 10 300 75 25
+  button "Start timer2", 39, 220 300 75 25
+  edit "0:45", 40, 10 330 70 21
+  edit "0:45", 41, 220 330 70 21
+  button "V", 42, 90 300 25 25
+  button "X", 66, 120 300 25 25
+  button "V", 67, 160 300 25 25
+  button "X", 43, 190 300 25 25
+
+  button "Cont1", 64, 90 330 35 25
+  button "cont2", 65, 180 330 35 25
+
+
+  box "Group Box", 44, 0 360 300 50
+  button "Sudden death", 45, 10 380 85 25
+  button "Q", 46, 100 380 25 25
+  button "5 secs", 47, 130 380 105 25
+  button "V", 48, 240 380 25 25
+  button "X", 49, 270 380 25 25
+
+  box "При краже", 50, 0 410 300 50
+  button "1", 51, 10 430 55 25
+  button "2", 52, 70 430 55 25
+  button "3", 53, 180 430 55 25
+  button "4", 54, 240 430 55 25
+  edit "", 55, 130 430 40 21
+
+  box "Распределение финал", 56, 0 460 300 70
+  edit "", 57, 10 480 100 21
+  edit "", 58, 10 500 100 21
+  edit "", 59, 190 480 100 21
+  edit "", 60, 190 500 100 21
+  button "Сумма фин", 61, 110 480 75 25
+  button "Button", 62, 110 510 75 15
 }
 
 alias tbj {
   dialog -mots tbj tbj
-  set %tbj_chan $did(tbj,8)
-} 
+  set %tbj_chan $active
+  did -ra tbj 7 %tbj_chan
+}
 
-alias -l tbj_logo {
-  msg %tbj_chan ОГРАБЛЕНИЕ
+alias tbj_logo {
+  msg %tbj_chan 10,10...........................................................................................................
+  msg %tbj_chan 10,10..............08,08----10,10...08,08-----10,10..08,08-----10,10.....08,08--10,10......08,08------10,10....08,08------10,10..08,08-----10,10..08,08--10,10..08,08--10,10..08,08--10,10...08,08---10,10..08,08-----10,10.............
+  msg %tbj_chan 10,10.............08,08--10,10..08,08--10,10..08,08--10,10.....08,08--10,10..08,08--10,10...08,08-10,10..08,08-10,10.....08,08--10,10........08,08--10,10..08,08--10,10..08,08--10,10.....08,08--10,10..08,08--10,10..08,08--10,10..08,08----10,10..08,08--10,10................
+  msg %tbj_chan 10,10.............08,08--10,10..08,08--10,10..08,08--10,10.....08,08-----10,10...08,08------10,10....08,08------10,10....08,08--10,10..08,08--10,10..08,08-----10,10..08,08------10,10..08,08--10,10.08,08--10,10.08,08--10,10..08,08-----10,10.............
+  msg %tbj_chan 10,10.............08,08--10,10..08,08--10,10..08,08--10,10.....08,08--10,10.....08,08--10,10....08,08--10,10...08,08--10,10...08,08--10,10...08,08--10,10..08,08--10,10..08,08--10,10.....08,08--10,10..08,08--10,10..08,08----10,10..08,08--10,10..08,08--10,10................
+  msg %tbj_chan 10,10..............08,08----10,10...08,08--10,10.....08,08--10,10....08,08--10,10......08,08--10,10..08,08------10,10...08,08--10,10...08,08--10,10..08,08-----10,10..08,08--10,10..08,08--10,10..08,08--10,10....08,08--10,10..08,08-----10,10.............
+  msg %tbj_chan 10,10...........................................................................................................
 }
 
 on 1:dialog:tbj:edit:*: {
-  if ($did == 8) set %tbj_chan $did(tbj,8)
+  if ($did == 7) set %tbj_chan $did(tbj, 7)
 
-  if (($did >= 10) && ($did <= 13)) set %tbj_players $did(tbj,10) $did(tbj,11) $did(tbj,12) $did(tbj,13)
-  if (($did >= 14) && ($did <= 17)) set %tbj_money $did(tbj,14) $did(tbj,15) $did(tbj,16) $did(tbj,17)
+  if ($did >= 9) && ($did <= 12) {
+    set %tbj_players $did(tbj,9) $did(tbj,10) $did(tbj,11) $did(tbj,12)
+  }
 
-  if ($did == 24) set %tbj_round $did(tbj,24)
+  if ($did >= 13) && ($did <= 16) {
+    set %tbj_score $did(tbj,13) $did(tbj,14) $did(tbj,15) $did(tbj,16)
+  }
+
+  if ($did == 25) set %tbj_round $did(tbj, 25)
+
 }
 
 on 1:dialog:tbj:sclick:*: {
 
-  ;Начало игры
   if ($did == 2) {
     unset %tbj_*
-    set %tbj_chan $did(tbj,8)
-    set %tbj_players $did(tbj,10) $did(tbj,11) $did(tbj,12) $did(tbj,13)
-    set %tbj_money $did(tbj,14) $did(tbj,15) $did(tbj,16) $did(tbj,17)
+    set %tbj_chan $did(tbj, 7)
     set %tbj_round 0
+    set %tbj_players $did(tbj,9) $did(tbj,10) $did(tbj,11) $did(tbj,12)
+    set %tbj_score $did(tbj,13) $did(tbj,14) $did(tbj,15) $did(tbj,16)
     mode %tbj_chan +m
     splay tbj_intro.mp3
     msg %tbj_chan 0,0play tbj_intro.mp3
-    timer 1 63 tbj_logo
+    timer 1 2 msg %tbj_chan Это Внешторгбанк на улице Бутлерова, Санкт-Петербург.
+    timer 1 5 msg %tbj_chan Здесь крутится огромный капитал, и в главном сейфе хранятся крупные суммы.
+    timer 1 8 msg %tbj_chan И сегодня в розыгрыше будет значительная сумма в три тысячи реальных российских рублей.
+    timer 1 15 msg %tbj_chan Такое богатство будут частями закладывать в центральный сейф банка по ящикам на протяжении сегодняшней игры.
+    timer 1 20 msg %tbj_chan За это материальное счастье будут сегодня бороться четверо предварительно зарегистрировавшихся игроков.
+    timer 1 25 msg %tbj_chan Двое покинут банк только в наручниках, так ничего и не получив. Ещё один получит скромный утешительный приз, а победитель этой схватки - всё, что сможет вынести из сейфа. 
+    timer 1 30 msg %tbj_chan Назначенную сумму каждого игрового раунда раскладывают втайне от игроков по депозитным ящикам в огромном сейфе в неравных долях. 
+    timer 1 35 msg %tbj_chan В интересах игроков забрать как можно больше денег и успеть покинуть сейф, пока время не вышло.
+    timer 1 40 msg %tbj_chan Сегодня банк попытаются обчистить...
+    timer 1 45 msg %tbj_chan 95,88( $+ $wordline(98,88,30,Дмитрий,2) $+ 95)
+    timer 1 47 msg %tbj_chan 95,88( $+ $wordline(98,88,30,Вадим,2) $+ 95)
+    timer 1 49 msg %tbj_chan 95,88( $+ $wordline(98,88,30,Геннадий,2) $+ 95)
+    timer 1 51 msg %tbj_chan 95,88( $+ $wordline(98,88,30,Павел,2) $+ 95)
+    timer 1 54 msg %tbj_chan Цель - вовремя вынести из банковского сейфа максимально возможные суммы. Миссия игроков - разбогатеть и слинять.
+    timer 1 57 msg %tbj_chan Я Дмитрий Данилович, и я подстрекаю вас пойти на... 
+    timer 1 60 tbj_logo
   }
 
-  ;Конец игры
   if ($did == 3) {
     splay tbj_closing.mp3
     msg %tbj_chan 0,0play tbj_closing.mp3
-    timer 1 39 mode %tbj_chan -m
   }
 
-  ;Воспроизведение фона
   if ($did == 4) {
-    if ((%tbj_round >= 0) && (%tbj_round <= 3)) && (%tbj_time == 0) {
-      splay tbj_bg3.mp3
-      msg %tbj_chan 0,0play tbj_bg3.mp3
-    }
-    elseif ((%tbj_round >= 0) && (%tbj_round <= 3)) && (%tbj_time != 0) {
-      splay tbj_bg1.mp3
-      msg %tbj_chan 0,0play tbj_bg1.mp3
-    }
+    splay tbj_bg_main.mp3
+    msg %tbj_chan 0,0play tbj_bg_main.mp3
   }
 
-  ;Кнопка +/-m
-  if ($did == 6) {
-    mode %tbj_chan $did(tbj, 6).text
-    if ($did(tbj, 6).text == +m) {
-      did -ra tbj 6 -m
-    }
-    elseif ($did(tbj, 6).text == -m) {
-      did -ra tbj 6 +m
-    }
-  }
-
-  if ($did == 7) {
+  if ($did == 5) || ($did == 6) {
     splay tbj_comm.mp3
     msg %tbj_chan 0,0play tbj_comm.mp3
+    timer 1 5 mode %tbj_chan $did($did)
   }
 
-  ;Приглашение игроков
+  if ($did == 17) {
+    if ($did(25) == 0) {
+      splay tbj_players.mp3
+      msg %tbj_chan 0,0play tbj_players.mp3
+    }
+    mode %tbj_chan +vvvv $did(9) $did(10) $did(11) $did(12)
+  }
+
   if ($did == 18) {
-    splay tbj_players.mp3
-    msg %tbj_chan 0,0play tbj_players.mp3
-    mode %tbj_chan +vvvv $did(tbj,10) $did(tbj,11) $did(tbj,12) $did(tbj,13)
+    set %tbj_calc $?="Какого игрока выгоняем?"
+    set %tbj_money2 -
+    set %tbj_money3 $gettok(%tbj_score,%tbj_calc,32)
+    set %tbj_score $puttok(%tbj_score,%tbj_money2,%tbj_calc,32)
+    set %tbj_players $puttok(%tbj_players,%tbj_money2,%tbj_calc,32)
+
+    did -ra tbj 9 $gettok(%tbj_players,1,32)
+    did -ra tbj 10 $gettok(%tbj_players,2,32)
+    did -ra tbj 11 $gettok(%tbj_players,3,32)
+    did -ra tbj 12 $gettok(%tbj_players,4,32)
+
+    did -ra tbj 13 $gettok(%tbj_score,1,32)
+    did -ra tbj 14 $gettok(%tbj_score,2,32)
+    did -ra tbj 15 $gettok(%tbj_score,3,32)
+    did -ra tbj 16 $gettok(%tbj_score,4,32)
+
+    splay tbj_leave.mp3
+    msg %tbj_chan 0,0play tbj_leave.mp3
   }
 
   if ($did == 19) {
     if ($numtok(%tbj_players,32) == 4) {
-      [19:30:05] <~Danilo> 54,34(.....98sashajackson.....54)54,34(.....98sashajackson.....54)54,34(.....98sashajackson.....54)54,34(.....98sashajackson.....54)
-      [19:30:15] <~Danilo> 54,88| ..............4625 WMR 54|54,88| ..............4625 WMR 54|54,88| ..............4625 WMR 54|54,88| ..............4625 WMR 54|
+      msg %tbj_chan 54,46( $+ $wordline(54,46,22,$gettok(%tbj_players,1,32),2) $+ 54,46)54,46( $+ $wordline(54,46,22,$gettok(%tbj_players,2,32),2) $+ 54,46)54,46( $+ $wordline(54,46,22,$gettok(%tbj_players,3,32),2) $+ 54,46)54,46( $+ $wordline(54,46,22,$gettok(%tbj_players,4,32),2) $+ 54,46)
+      msg %tbj_chan 94,88| $+ $wordline(58,88,22,$f_num($f_money($gettok(%tbj_score,1,32))),3) $+ 94|94,88| $+ $wordline(58,88,22,$f_num($f_money($gettok(%tbj_score,2,32))),3) $+ 94|94,88| $+ $wordline(58,88,22,$f_num($f_money($gettok(%tbj_score,3,32))),3) $+ 94|94,88| $+ $wordline(58,88,22,$f_num($f_money($gettok(%tbj_score,4,32))),3) $+ 94|
     }
-    elseif ($numtok(%tbj_players,32) == 3) {
-      [19:30:05] <~Danilo> 54,34(.....98sashajackson.....54)54,34(.....98sashajackson.....54)54,34(.....98sashajackson.....54)
-      [19:30:15] <~Danilo> 54,88| ..............4625 WMR 54|54,88| ..............4625 WMR 54|54,88| ..............4625 WMR 54|
+    if ($numtok(%tbj_players,32) == 3) {
+      msg %tbj_chan 54,46( $+ $wordline(54,46,22,$gettok(%tbj_players,1,32),2) $+ 54,46)54,46( $+ $wordline(54,46,22,$gettok(%tbj_players,2,32),2) $+ 54,46)54,46( $+ $wordline(54,46,22,$gettok(%tbj_players,3,32),2) $+ 54,46)
+      msg %tbj_chan 94,88| $+ $wordline(58,88,22,$f_num($f_money($gettok(%tbj_score,1,32))),3) $+ 94|94,88| $+ $wordline(58,88,22,$f_num($f_money($gettok(%tbj_score,2,32))),3) $+ 94|94,88| $+ $wordline(58,88,22,$f_num($f_money($gettok(%tbj_score,3,32))),3) $+ 94|
     }
-    elseif ($numtok(%tbj_players,32) == 2) {
-      [19:30:05] <~Danilo> 54,34(.....98sashajackson.....54)54,34(.....98sashajackson.....54)
-      [19:30:15] <~Danilo> 54,88| ..............4625 WMR 54|54,88| ..............4625 WMR 54|
+    if ($numtok(%tbj_players,32) == 2) {
+      msg %tbj_chan 54,46( $+ $wordline(54,46,22,$gettok(%tbj_players,1,32),2) $+ 54,46)54,46( $+ $wordline(54,46,22,$gettok(%tbj_players,2,32),2) $+ 54,46)
+      msg %tbj_chan 94,88| $+ $wordline(58,88,22,$f_num($f_money($gettok(%tbj_score,1,32))),3) $+ 94|94,88| $+ $wordline(58,88,22,$f_num($f_money($gettok(%tbj_score,2,32))),3) $+ 94|
     }
   }
 
-  if ($did == 23) {
+  if ($did == 20) {
+    set %tbj_calc $?="Какому игроку зачисляем?"
+    set %tbj_money $gettok(%tbj_score,%tbj_calc,32)
+    set %tbj_money2 $calc(%tbj_money + $gettok(%tbj_boxes2,$did(35),32))
+    set %tbj_score $puttok(%tbj_score,%tbj_money2,%tbj_calc,32)
+
+    did -ra tbj 13 $gettok(%tbj_score,1,32)
+    did -ra tbj 14 $gettok(%tbj_score,2,32)
+    did -ra tbj 15 $gettok(%tbj_score,3,32)
+    did -ra tbj 16 $gettok(%tbj_score,4,32)
+  }
+
+  if ($did == 21) {
+    set %tbj_calc $?="У какого игрока отбираем?"
+    set %tbj_calc2 $?="Сколько отбираем?"
+    set %tbj_money $gettok(%tbj_score,%tbj_calc,32)
+    set %tbj_money2 $calc(%tbj_money - %tbj_calc2)
+    set %tbj_score $puttok(%tbj_score,%tbj_money2,%tbj_calc,32)
+
+    did -ra tbj 13 $gettok(%tbj_score,1,32)
+    did -ra tbj 14 $gettok(%tbj_score,2,32)
+    did -ra tbj 15 $gettok(%tbj_score,3,32)
+    did -ra tbj 16 $gettok(%tbj_score,4,32)
+  }
+
+  if ($did == 22) {
+    msg %tbj_chan 95,88( $wordline(98,88,15,$did(9),1) $+ 46,46 58 $+ $did(40) 98,98_46,46 58 $+ $did(41) 95,88 $wordline(98,88,15,$did(10),3) 95)
+  }
+
+  if ($did == 24) {
     inc %tbj_round
-    did -ra tbj 24 %tbj_round
-    set %tbj_boxes 01 02 03 04 05 06 07 08 09 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25
-  }
-
-  if ($did == 25) {
-    set %tbj_sd $?="Начинаем тай-брейк?"
-    if (%tbj_sd == 1) {
-      set %tbj_mode 3
-      splay tbj_sudden_death.mp3
-      msg %tbj_chan 0,0play tbj_sudden_death.mp3
-      .timer -m 1 3500 splay tbj_bg_qualification.mp3
-      .timer -m 1 3500 msg %tbj_chan 0,0play tbj_bg_qualification.mp3
-    }
-    elseif (%tbj_sd == 0) {
-      if (%tbj_round == 1) || (%tbj_round == 2) {
-        set %tbj_total_summ 1000
-      }
-      elseif (%tbj_round == 3) {
-        set %tbj_total_summ $calc(1000 + $did(tbj,42) + $did(tbj,43) + $did(tbj,44) + $did(tbj,45))
-      }
-      if (%tbj_round == 1) {
-        set %tbj_time 90
-      }
-      if (%tbj_round == 2) {
-        set %tbj_time 120
-      }     
-      splay tbj_lets_play.mp3
-      msg %tbj_chan 0,0play tbj_lets_play.mp3
-    }
+    did -ra tbj 25 %tbj_round
   }
 
   if ($did == 26) {
-    set %tbj_fakes STEAL STEAL STEAL STEAL 0 0 0 0 BANKRUPT
-
-    if (%tbj_round == 3) {
-      set %tbj_total_summs $did(42) $did(43) $did(44) $did(45)
-    }
-
-    set %total 1000
-    set %max_range 1000
-    set %values
     if (%tbj_round == 1) || (%tbj_round == 2) {
-      ; while ($numtok(%values, 32) != 16) {
-      ; var %element $rand(1, %max_range)
-      ; set %values %values %element
-      ; set %max_range $calc(%max_range - %element)
+      set %tbj_bank 1000
+    }  
+    if ($numtok(%tbj_players,32) == 4) {
+      set %tbj_score 0 0 0 0     
     }
-    elseif (%tbj_round == 3) {
-      while ($numtok(%values, 32) != 12) {
-        var %element $rand(1, %max_range)
-        set %values %values %element
-        set %max_range $calc(%max_range - %element)
-      }
+    if ($numtok(%tbj_players,32) == 3) {
+      set %tbj_score 0 0 0    
     }
+    if ($numtok(%tbj_players,32) == 2) {
+      set %tbj_score 0 0    
+    }
+    if (%tbj_round == 3) {
+      set %tbj_bank $calc(%tbj_total + $did(57) + $did(58) + $did(59) + $did(60))
+    }         
+    splay tbj_lets_play.mp3
+    msg %tbj_chan 0,0play tbj_lets_play.mp3
+    echo %tbj_chan Кнопка MD5 (если значение не равно 0, жми на кнопку ещё раз)
+  }
+
+  if ($did == 27) {
+    set %tbj_numbers 01 02 03 04 05 06 07 08 09 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25
+    set %tbj_boxes 0 0 0 0 STEAL STEAL STEAL STEAL BANKRUPT
+    set %tbj_total 1000
+    set %tbj_max_range 983
+    set %tbj_values
+    while ($numtok(%tbj_values, 32) != 15) {
+      var %tbj_element $rand(0, $min(150,%tbj_max_range))
+      set %tbj_values %tbj_values $calc(%tbj_element + 1)
+      set %tbj_max_range $calc(%tbj_max_range - %tbj_element)
+    }
+    set %tbj_values %tbj_values %tbj_max_range
+    set %tbj_boxes2 %tbj_boxes %tbj_values
+    %tbj_boxes2 = $shuftok(%tbj_boxes2,32)
+    if (%tbj_max_range != 0) {
+      echo %tbj_chan MD5: $md5(%tbj_boxes2)
+    }
+    elseif (%tbj_max_range == 0) {
+      msg %tbj_chan MD5: $md5(%tbj_boxes2)
+      echo %tbj_chan $calc($gettok(%tbj_values,1,32) + $gettok(%tbj_values,2,32) + $gettok(%tbj_values,3,32) + $gettok(%tbj_values,4,32) + $gettok(%tbj_values,5,32) + $gettok(%tbj_values,6,32) + $gettok(%tbj_values,7,32) + $gettok(%tbj_values,8,32) + $gettok(%tbj_values,9,32) + $gettok(%tbj_values,10,32) + $gettok(%tbj_values,11,32) + $gettok(%tbj_values,12,32) + $gettok(%tbj_values,13,32) + $gettok(%tbj_values,1,32) + $gettok(%tbj_values,14,32) + $gettok(%tbj_values,15,32) + $gettok(%tbj_values,16,32))
+    }
+    echo %tbj_chan %tbj_max_range
+  }
+
+  if ($did == 28) {
+    msg %tbj_chan STR: %tbj_boxes2
   }
 
   if ($did == 29) {
-    if ($did(tbj, 29).text == Время) {
-      did -ra tbj 29 Cont
+    msg %tbj_chan 97,97....59|94,94.........................88,88 $+ $wordline(52,88,14,$f_num($f_money(%tbj_bank)) P,3) $+ 94,94.........................59,97|97,97....
+    msg %tbj_chan 97,97....59|94,94...94,88[98 $gettok(%tbj_numbers,1,32) 94]94,94...48|94,94...94,88[98 $gettok(%tbj_numbers,2,32)) 94]94,94...48|94,94...94,88[98 $gettok(%tbj_numbers,3,32) 94]94,94...48|94,94...94,88[98 $gettok(%tbj_numbers,4,32) 94]94,94...48|94,94...94,88[98 $gettok(%tbj_numbers,5,32) 94]94,94...59,97|97,97....
+    msg %tbj_chan 97,97....59|94,94...94,88[98 $gettok(%tbj_numbers,6,32) 94]94,94...48|94,94...94,88[98 $gettok(%tbj_numbers,7,32)) 94]94,94...48|94,94...94,88[98 $gettok(%tbj_numbers,8,32) 94]94,94...48|94,94...94,88[98 $gettok(%tbj_numbers,9,32) 94]94,94...48|94,94...94,88[98 $gettok(%tbj_numbers,10,32) 94]94,94...59,97|97,97....
+    msg %tbj_chan 97,97....59|94,94...94,88[98 $gettok(%tbj_numbers,11,32) 94]94,94...48|94,94...94,88[98 $gettok(%tbj_numbers,12,32) 94]94,94...48|94,94...94,88[98 $gettok(%tbj_numbers,13,32) 94]94,94...48|94,94...94,88[98 $gettok(%tbj_numbers,14,32) 94]94,94...48|94,94...94,88[98 $gettok(%tbj_numbers,15,32) 94]94,94...59,97|97,97....
+    msg %tbj_chan 97,97....59|94,94...94,88[98 $gettok(%tbj_numbers,16,32) 94]94,94...48|94,94...94,88[98 $gettok(%tbj_numbers,17,32) 94]94,94...48|94,94...94,88[98 $gettok(%tbj_numbers,18,32) 94]94,94...48|94,94...94,88[98 $gettok(%tbj_numbers,19,32) 94]94,94...48|94,94...94,88[98 $gettok(%tbj_numbers,20,32) 94]94,94...59,97|97,97....
+    msg %tbj_chan 97,97....59|94,94...94,88[98 $gettok(%tbj_numbers,21,32) 94]94,94...48|94,94...94,88[98 $gettok(%tbj_numbers,22,32) 94]94,94...48|94,94...94,88[98 $gettok(%tbj_numbers,23,32) 94]94,94...48|94,94...94,88[98 $gettok(%tbj_numbers,24,32) 94]94,94...48|94,94...94,88[98 $gettok(%tbj_numbers,25,32) 94]94,94...59,97|97,97....
+  }
+
+  if ($did == 30) {
+    if (%tbj_round == 1) {
+      set %tbj_mode 1
       splay tbj_timer.mp3
-      msg %tbj_chan 12,2( $wordline(00,02,05,$f_time(%tbj_time),2) 12,2)0,0play tbj_timer.mp3
       timergame
+      msg %tbj_chan 40,40 521:1540  0,0play tbj_timer.mp3
+      timer84 1 65 splay tbj_last10secs.mp3
+      timer85 1 65 40,40 520:1040  0,0play tbj_last10secs.mp3
     }
-    elseif ($did(tbj, 6).text == Cont) {
-      did -ra tbj 6 +m
-    }
-  }
-
-  if ($did == 31) {
-    if (%tbj_player == $null) {
-      unset %tbj_ignore
-      splay tbj_no_answer.wav
-      msg %tbj_chan 0,0play tbj_no_answer.wav
-    }
-    if (%tbj_player != $null) && (%tbj_mode == 3) {
-      splay tbj_incorrect.mp3
-      msg %tbj_chan 0,0play tbj_incorrect.mp3
+    if (%tbj_round == 2) {
+      set %tbj_mode 1
+      splay tbj_timer.mp3
+      timergame
+      msg %tbj_chan 40,40 521:3040  0,0play tbj_timer.mp3
+      timer84 1 80 splay tbj_last10secs.mp3
+      timer85 1 80 40,40 520:1040  0,0play tbj_last10secs.mp3
     }
   }
 
-  if ($did == 32) {
-    msg %tbj_chan 96,96....60|94,94.........................88,88|88,88 $+ $wordline(52,88,12,$f_num($f_money(%tbj_total_summ)) WMR,3) $+ 88|94,94............94,94.............60,96|96,96....
-    msg %tbj_chan 96,96....60|94,94...94,88[88.98 $+ $gettok(%tbj_boxes,1,32) $+ 88.94]94,94...36|94,94...94,88[88.98 $+ $gettok(%tbj_boxes,2,32) $+ 88.94]94,94...36|94,94...94,88[88.98 $+ $gettok(%tbj_boxes,3,32) $+ 88.94]94,94...36|94,94...94,88[88.98 $+ $gettok(%tbj_boxes,4,32) $+ 88.94]94,94...36|94,94...94,88[88.98 $+ $gettok(%tbj_boxes,5,32) $+ 88.94]94,94...60,96|96,96....
-    msg %tbj_chan 96,96....60|94,94...94,88[88.98 $+ $gettok(%tbj_boxes,6,32) $+ 88.94]94,94...36|94,94...94,88[88.98 $+ $gettok(%tbj_boxes,7,32) $+ 88.94]94,94...36|94,94...94,88[88.98 $+ $gettok(%tbj_boxes,8,32) $+ 88.94]94,94...36|94,94...94,88[88.98 $+ $gettok(%tbj_boxes,9,32) $+ 88.94]94,94...36|94,94...94,88[88.98 $+ $gettok(%tbj_boxes,10,32) $+ 88.94]94,94...60,96|96,96....
-    msg %tbj_chan 96,96....60|94,94...94,88[88.98 $+ $gettok(%tbj_boxes,11,32) $+ 88.94]94,94...36|94,94...94,88[88.98 $+ $gettok(%tbj_boxes,12,32) $+ 88.94]94,94...36|94,94...94,88[88.98 $+ $gettok(%tbj_boxes,13,32) $+ 88.94]94,94...36|94,94...94,88[88.98 $+ $gettok(%tbj_boxes,14,32) $+ 88.94]94,94...36|94,94...94,88[88.98 $+ $gettok(%tbj_boxes,15,32) $+ 88.94]94,94...60,96|96,96....
-    msg %tbj_chan 96,96....60|94,94...94,88[88.98 $+ $gettok(%tbj_boxes,16,32) $+ 88.94]94,94...36|94,94...94,88[88.98 $+ $gettok(%tbj_boxes,17,32) $+ 88.94]94,94...36|94,94...94,88[88.98 $+ $gettok(%tbj_boxes,18,32) $+ 88.94]94,94...36|94,94...94,88[88.98 $+ $gettok(%tbj_boxes,19,32) $+ 88.94]94,94...36|94,94...94,88[88.98 $+ $gettok(%tbj_boxes,20,32) $+ 88.94]94,94...60,96|96,96....
-    msg %tbj_chan 96,96....60|94,94...94,88[88.98 $+ $gettok(%tbj_boxes,21,32) $+ 88.94]94,94...36|94,94...94,88[88.98 $+ $gettok(%tbj_boxes,22,32) $+ 88.94]94,94...36|94,94...94,88[88.98 $+ $gettok(%tbj_boxes,23,32) $+ 88.94]94,94...36|94,94...94,88[88.98 $+ $gettok(%tbj_boxes,24,32) $+ 88.94]94,94...36|94,94...94,88[88.98 $+ $gettok(%tbj_boxes,25,32) $+ 88.94]94,94...60,96|96,96....
+  if ($did == 32) || ($did == 47) {
+    timer991 1 0 echo %tbj_chan 5
+    timer992 1 1 echo %tbj_chan 4
+    timer993 1 2 echo %tbj_chan 3
+    timer994 1 3 echo %tbj_chan 2
+    timer995 1 4 echo %tbj_chan 1
+    timer996 1 5 splay tbj_no_answer.wav
+    timer996 1 5 msg %tbj_chan 0,0play tbj_no_answer.wav
+  }
+
+  if ($did == 33) {
+    unset %tbj_ignore
+    timer84 -p
+    timer85 -p
+    timer997 -p
+    timer998 -p
+    splay tbj_correct.wav
+    splay tbj_bg1.mp3
+    msg %tbj_chan 46,46 58 $+ $f_time(%j,n:ss) 46  0,0play tbj_correct.wav tbj_bg1.mp3
   }
 
   if ($did == 34) {
-    if ($gettok(%tbj_values, $did(33), 32) = STEAL) {
-      splay tbj_steal.mp3
-      msg %tbj_chan 54,34(98 $+ $wordline(98,34,3,$did(33),3)  96,9694[ $+ $wordline(88,96,12,STEAL,2) $+ 94] 0,0play tbj_steal.mp3
-    }
-    elseif ($gettok(%tbj_values, $did(33), 32) = 0) {
-      splay tbj_empty.mp3
-      msg %tbj_chan 54,34(98 $+ $wordline(98,34,3,$did(33),3)  96,9694[ $+ $wordline(88,96,12,0.00 WMR,2) $+ 94] 0,0play tbj_steal.mp3
-    }
-    elseif ($gettok(%tbj_values, $did(33), 32) = BANKRUPT) {
-      splay tbj_empty.mp3
-      msg %tbj_chan 54,34(98 $+ $wordline(98,34,3,$did(33),3)  96,9694[ $+ $wordline(88,96,12,BANKRUPT,2) $+ 94] 0,0play tbj_empty.mp3
-    }
-    else {
-      splay tbj_money_box.mp3
-      msg %tbj_chan 54,34(98 $+ $wordline(98,34,3,$did(33),3)  96,9694[ $+ $wordline(88,96,12,$f_money($gettok(%tbj_values,$did(33),32)) WMR,2) $+ 94] 0,0play tbj_money_box.mp3
-    }
-    set %tbj_boxes $puttok(%tbj_boxes, 88.., $did(33), 32)
+    unset %tbj_ignore
+    set %tbj_ignore %tbj_sus123
+    nexttime
+    set %tbj_mode 1
+    splay tbj_incorrect.wav
+    msg %tbj_chan 40,40 52 $+ $f_time(%j,n:ss) 40  0,0play tbj_incorrect.wav
   }
 
-  if ($did == 57) {
-    msg %tbj_chan 98,98...........94,88[...sashajackson...]98,98.94,88[...sashajackson...]
-    msg %tbj_chan 94,88[ $wordline(94,88,7,Раунд 1,2) 94]54,34(98 $+ $wordline(98,34,18,$f_num($f_money($did(42))) WMR,2) $+ 54)98,98.54,34(98 $+ $wordline(98,34,18,$f_num($f_money($did(43))) WMR,2) $+ 54)
-    msg %tbj_chan 94,88[ $wordline(94,88,7,Раунд 2,2) 94]54,34(98 $+ $wordline(98,34,18,$f_num($f_money($did(44))) WMR,2) $+ 54)98,98.54,34(98 $+ $wordline(98,34,18,$f_num($f_money($did(45))) WMR,2) $+ 54)
-    msg %tbj_chan 94,88[ $wordline(94,88,7,Итого,2) 94]54,34(98 $+ $wordline(98,34,18,$f_num($f_money($calc($did(42) + $did(44)))) WMR,2) $+ 54)98,98.54,34(98 $+ $wordline(98,34,18,$f_num($f_money($calc($did(43) + $did(45)))) WMR,2) $+ 54)
-    did -ra tbj 46 $calc($did(42) + $did(44))
-    did -ra tbj 47 $calc($did(43) + $did(45))
+  if ($did == 36) {
+    set %tbj_sus $gettok(%tbj_boxes2,$did(35),32)
+    if (%tbj_sus == 0) {
+      set %sound tbj_empty
+      msg %tbj_chan 54,46( $a_right($did(35),02,54,46) 94,88[ $+ $wordline(98,88,11,$f_num($f_money($gettok(%tbj_boxes2,$did(35),32))) Р,2) 94] 0,0play %sound $+ .mp3
+    }
+    elseif (%tbj_sus == BANKRUPT) {
+      set %sound tbj_empty
+      msg %tbj_chan 54,46( $a_right($did(35),02,54,46) 94,88[ $wordline(98,88,11,BANKRUPT,2) 94] 0,0play %sound $+ .mp3
+    }
+    elseif (%tbj_sus == STEAL) {
+      set %sound tbj_steal
+      msg %tbj_chan 54,46( $a_right($did(35),02,54,46) 94,88[ $+ $wordline(98,88,11,STEAL,2) 94] 0,0play %sound $+ .mp3
+    }
+    elseif (%tbj_sus > 0) && (%tbj_sus != STEAL) && (%tbj_sus != BANKRUPT) {
+      set %sound tbj_money_box
+      msg %tbj_chan 54,46( $a_right($did(35),02,54,46) 94,88[ $+ $wordline(98,88,11,$f_num($f_money($gettok(%tbj_boxes2,$did(35),32))) Р,2) 94] 0,0play %sound $+ .mp3
+    }
+    splay %sound $+ .mp3
+    set %tbj_numbers $puttok(%tbj_numbers, 88.., $did(35), 32)
+    set %tbj_bank $calc(%tbj_bank - $gettok(%tbj_boxes2,$did(35),32))
+  }
+
+  if ($did == 45) {
+    splay tbj_sudden_death.mp3
+    msg %tbj_chan 0,0play tbj_sudden_death.mp3
+    timer 1 4 splay tbj_bg_qualification.mp3
+    timer 1 4 msg %tbj_chan 0,0play tbj_bg_qualification.mp3
+  }
+
+  if ($did == 46) {
+    set %tbj_mode 1
+  }
+
+  if ($did == 48) {
+    splay stop
+    splay tbj_correct.wav
+    msg %tbj_chan 0,0play tbj_correct.wav mp3:stop
+  }
+
+  if ($did == 49) {
+    splay stop
+    splay tbj_incorrect.wav
+    msg %tbj_chan 0,0play tbj_incorrect.wav mp3:stop
+  }
+
+  if ($did >= 51) && ($did <= 54) {
+    set %tbj_money $gettok(%tbj_score,$did($did),32)
+    set %tbj_money2 $calc(%tbj_money + $did(55))
+    set %tbj_score $puttok(%tbj_score,%tbj_money2,$did($did),32)
+
+    did -ra tbj 13 $gettok(%tbj_score,1,32)
+    did -ra tbj 14 $gettok(%tbj_score,2,32)
+    did -ra tbj 15 $gettok(%tbj_score,3,32)
+    did -ra tbj 16 $gettok(%tbj_score,4,32)
+  }
+
+  if ($did == 62) {
+    set %tbj_numbers 01 02 03 04 05 06 07 08 09 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25
+    set %tbj_boxes 0 0 0 0 STEAL STEAL STEAL STEAL BANKRUPT
+    set %tbj_boxes3 $did(57) $did(58) $did(59) $did(60)
+    set %tbj_total 1000
+    set %tbj_max_range 1000
+    set %tbj_values
+    while ($numtok(%tbj_values, 32) != 11) {
+      var %tbj_element $rand(0, $min(150,%tbj_max_range))
+      set %tbj_values %tbj_values $calc(%tbj_element + 1)
+      set %tbj_max_range $calc(%tbj_max_range - %tbj_element)
+    }
+    set %tbj_values %tbj_values %tbj_max_range
+    set %tbj_boxes2 %tbj_boxes %tbj_boxes3 %tbj_values
+    %tbj_boxes2 = $shuftok(%tbj_boxes2,32)
+    if (%tbj_max_range != 0) {
+      echo %tbj_chan MD5: $md5(%tbj_boxes2)
+    }
+    elseif (%tbj_max_range == 0) {
+      msg %tbj_chan MD5: $md5(%tbj_boxes2)
+    }
+    echo %tbj_chan %tbj_max_range
+  }
+
+  if ($did == 38) {
+    set %tbj_stor 1
+    splay tbj_timer.mp3
+    timergame
+    msg %tbj_chan 40,40 520:4540  0,0play tbj_timer.mp3
+    timer84 1 80 splay tbj_last10secs.mp3
+    timer85 1 80 40,40 520:1040  0,0play tbj_last10secs.mp3
+  }
+
+  if ($did == 39) {
+    set %tbj_stor 2
+    splay tbj_timer.mp3
+    timergame
+    msg %tbj_chan 40,40 520:4540  0,0play tbj_timer.mp3
+    timer84 1 80 splay tbj_last10secs.mp3
+    timer85 1 80 40,40 520:1040  0,0play tbj_last10secs.mp3
+  }
+
+  if ($did == 63) {
+    set %tbj_mode 1
+    nexttime
+    splay tbj_timer.mp3
+    msg %tbj_chan 46,46 58 $+ $f_time(%j,n:ss) 46  0,0play tbj_timer.mp3
+  }
+
+  if ($did == 64) {
+    set %tbj_mode 1
+    set %tbj_stor 1
+    nexttime2
+    splay tbj_timer.mp3
+    msg %tbj_chan 46,46 58 $+ $f_time(%k,n:ss) 46  0,0play tbj_timer.mp3
+  }
+
+  if ($did == 65) {
+    set %tbj_mode 1
+    set %tbj_stor 2
+    nexttime3
+    splay tbj_timer.mp3
+    msg %tbj_chan 46,46 58 $+ $f_time(%m,n:ss) 46  0,0play tbj_timer.mp3
+  }
+
+  if ($did == 42) {
+    timer84 -p
+    timer85 -p
+    timer997 -p
+    timer998 -p
+    splay tbj_correct.wav
+    splay tbj_bg1.mp3
+    msg %tbj_chan 46,46 58 $+ $f_time(%k,n:ss) 46  0,0play tbj_correct.wav tbj_bg1.mp3
+  }
+
+  if ($did == 66) {
+    nexttime2
+    set %tbj_mode 1
+    splay tbj_incorrect.wav
+    msg %tbj_chan 40,40 52 $+ $f_time(%k,n:ss) 40  0,0play tbj_incorrect.wav
+  }
+
+  if ($did == 67) {
+    timer84 -p
+    timer85 -p
+    timer997 -p
+    timer998 -p
+    splay tbj_correct.wav
+    splay tbj_bg1.mp3
+    msg %tbj_chan 46,46 58 $+ $f_time(%m,n:ss) 46  0,0play tbj_correct.wav tbj_bg1.mp3
+  }
+
+  if ($did == 43) {
+    nexttime3
+    set %tbj_mode 1
+    splay tbj_incorrect.wav
+    msg %tbj_chan 40,40 52 $+ $f_time(%m,n:ss) 40  0,0play tbj_incorrect.wav
+  }
+
+  if ($did == 61) {
+    msg %tbj_chan 95,88( $wordline(98,88,17,$did(9),1) $+ 95)98,98__95,88( $wordline(98,88,17,$did(10),3) 95)
+    msg %tbj_chan 95,88( $wordline(98,88,11,Раунд 1,1) $+ 46,46 58 $+ $wordline(58,46,5,$did(57) Р,2) 98,98__46,46 58 $+ $wordline(58,46,5,$did(59) Р,2) 95,88 $wordline(98,88,11,Раунд 1,3) 95)
+    msg %tbj_chan 95,88( $wordline(98,88,11,Раунд 2,1) $+ 46,46 58 $+ $wordline(58,46,5,$did(58) Р,2) 98,98__46,46 58 $+ $wordline(58,46,5,$did(60) Р,2) 95,88 $wordline(98,88,11,Раунд 2,3) 95)
+    msg %tbj_chan 95,88( $wordline(98,88,11,Итого,1) $+ 46,46 58 $+ $wordline(58,46,5,$calc($did(57) + $did(58)) Р,2) 98,98__46,46 58 $+ $wordline(58,46,5,$calc($did(59) + $did(60)) Р,2) 95,88 $wordline(98,88,11,Итого,3) 95)
   }
 
 }
 
-alias -l timergame {
+on *:TEXT:*:%tbj_chan: {
+  if ($dialog(tbj) != $null) {
+    if (%tbj_mode == 1) && ($strip($1-) == й) || ($strip($1-) == q) {
+      set %tbj_sus123 $nick
+      set %tbj_answer
+      if (($nick == $did(tbj,9))) %tbj_answer = $nick
+      if (($nick == $did(tbj,10))) %tbj_answer = $nick
+      if (($nick == $did(tbj,11))) %tbj_answer = $nick
+      if (($nick == $did(tbj,12))) %tbj_answer = $nick
+      if (%tbj_answer != $null) && (%tbj_sus123 != %tbj_ignore) {
+        timer991 off
+        timer992 off
+        timer993 off
+        timer994 off
+        timer995 off
+        timer996 off
+        set %tbj_mode 0
+        msg %tbj_chan 54,46( $+ $wordline(54,46,22,$nick,2) $+ 54,46) 00,00play tbj_buzzer.wav
+        splay tbj_buzzer.wav 
+      }
+    }
+  }
+}
+
+alias timergame {
   if (%tbj_round == 1) {
+    set %j 75
+    set %p 0
+    set %v 1000
+    set %b 1000
+    timer997 75 1 minus2
+    timer998 75 1 didushka2
+  }
+  elseif (%tbj_round == 2) {
     set %j 90
     set %p 0
     set %v 1000
     set %b 1000
-    timer1 90 1 minus2
-    timer2 90 1 didushka2
+    timer997 90 1 minus2
+    timer998 90 1 didushka2
   }
-  elseif (%tbj_round == 2) {
-    set %j 120
+  elseif (%tbj_round == 3) && (%tbj_stor == 1) {
+    set %k 45
     set %p 0
     set %v 1000
     set %b 1000
-    timer1 120 1 minus2
-    timer2 120 1 didushka2
+    timer997 45 1 minus3
+    timer998 45 1 didushka3
+  }
+  elseif (%tbj_round == 3) && (%tbj_stor == 2) {
+    set %m 45
+    set %p 0
+    set %v 1000
+    set %b 1000
+    timer997 45 1 minus4
+    timer998 45 1 didushka4
   }
 }
 
-alias -l minus2 {
-  set %tbj_time $puttok(%tbj_time, $calc(%tbj_time - 1), 1, 32)
-  if (%tbj_time == 90) || (%tbj_time == 120) {
-    msg %tbj_chan 12,2( $wordline(00,02,05,$f_time(%tbj_time),2) 12,2)
-  }
-  elseif (%tbj_time == 0) {
-    splay tbj_outoftime.mp3  
-    msg %tbj_chan 12,2( $wordline(00,02,05,$f_time(%tbj_time),2) 12,2)00,99play tbj_outoftime.mp3
-    timers off
-  }
-  if (%tbj_time == 10) {
-    splay tbj_last10secs.mp3
-    msg %tbj_chan 12,2( $wordline(00,02,05,$f_time(%tbj_time),2) 12,2)0,0play tbj_last10secs.mp3
+alias minus2 {
+  set %j $puttok(%j, $calc(%j - 1), 1, 32)
+  echo -a %j
+  if (%j == 0) {
+    timer3 off
+    timer4 off
+    timer5 off
+    timer6 off
+    splay tbj_outoftime.mp3
+    msg %tbj_chan 46,46 530:0040  0,0play tbj_outoftime.mp3
   }
 }
 
-alias -l didushka2 {
-  did -ra tbj 28 $f_time(%tbj_time,s)
+alias minus3 {
+  set %k $puttok(%k, $calc(%k - 1), 1, 32)
+  echo -a %k
+  if (%k == 0) {
+    timer3 off
+    timer4 off
+    timer5 off
+    timer6 off
+    splay tbj_outoftime.mp3
+    msg %tbj_chan 46,46 530:0040  0,0play tbj_outoftime.mp3
+  }
 }
 
-alias -l f_time {
-  ;алиас возвращает время в отформатированном виде. Принимает в аргументы как количество секунд, так и таймстамп в некорректном виде. Например,
-  ;$f_time(999) > 16:39
-  ;$f_time(999,H:nn:ss) > 0:16:39
-  ;$f_time(1:1,n:ss) > 1:01
-  var %time $strip($1)
-  var %format n:ss
-  if ($numtok(%time,58) == 3) %format = H:nn:ss
-  if ($len($2) > 0) %format = $2
-  var %time2 0
-  var %i 1
-  if ($numtok(%time,58) > 1) {
-    while (%i <= $numtok(%time,58)) {
-      %time2 = $calc(  60 ^ $calc($numtok(%time,58) - %i) * $gettok(%time,%i,58) + %time2  )
-      inc %i
-    }
+alias minus4 {
+  set %m $puttok(%m, $calc(%m - 1), 1, 32)
+  echo -a %m
+  if (%m == 0) {
+    timer3 off
+    timer4 off
+    timer5 off
+    timer6 off
+    splay tbj_outoftime.mp3
+    msg %tbj_chan 46,46 530:0040  0,0play tbj_outoftime.mp3
   }
-  else %time2 = %time
-  if (%time2 > 0) {
-    if ($pos(%format,H) > 0) return $duration(%time2,3)
-    else return $asctime(%time2,%format)
-  }
-  else return 0
 }
 
-alias -l f_time2 {
-  ;алиас возвращает время в отформатированном виде. Принимает в аргументы как количество секунд, так и таймстамп в некорректном виде. Например,
-  ;$f_time(999) > 16:39
-  ;$f_time(999,H:nn:ss) > 0:16:39
-  ;$f_time(1:1,n:ss) > 1:01
-  var %time $strip($1)
-  var %format n:ss
-  if ($numtok(%time,58) == 3) %format = H:nn:ss
-  if ($len($2) > 0) %format = $2
-  var %time2 0
-  var %i 1
-  if ($numtok(%time,58) > 1) {
-    while (%i <= $numtok(%time,58)) {
-      %time2 = $calc(  60 ^ $calc($numtok(%time,58) - %i) * $gettok(%time,%i,58) + %time2  )
-      inc %i
-    }
-  }
-  else %time2 = %time
-  if (%time2 > 0) {
-    if ($pos(%format,H) > 0) return $duration(%time2,3)
-    else return $asctime(%time2,%format)
-  }
-  else return 0
+alias didushka2 {
+  did -ra tbj 31 $f_time(%j,n:ss)
+}
+
+alias didushka3 {
+  did -ra tbj 40 $f_time(%k,n:ss)
+}
+
+alias didushka4 {
+  did -ra tbj 41 $f_time(%m,n:ss)
+}
+
+alias nexttime {
+  timer997 %j 1 minus2
+  timer998 %j 1 didushka2
+}
+
+alias nexttime2 {
+  timer997 %k 1 minus3
+  timer998 %k 1 didushka3
+}
+
+alias nexttime3 {
+  timer997 %m 1 minus4
+  timer998 %m 1 didushka4
 }
