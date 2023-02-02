@@ -30,6 +30,21 @@ alias answers {
   msg %wl_chan 1,1.....................................................................................
 }
 
+alias players {
+  msg %wl_chan 1,1.....................................................................................
+  msg %wl_chan 15,6[000115]01,01.02,02. $+ $wordline(00,02,10,$gettok(%wl_players,1,124),2) $+ 02.15,6[000215]01,01.02,02. $+ $wordline(00,02,10,$gettok(%wl_players,2,124),2) $+ 02.15,6[000315]01,01.02,02. $+ $wordline(00,02,10,$gettok(%wl_players,3,124),2) $+ 02.15,6[000415]01,01.02,02. $+ $wordline(00,02,10,$gettok(%wl_players,4,124),2) $+ 02.15,6[000515]01,01.02,02. $+ $wordline(00,02,10,$gettok(%wl_players,5,124),2) $+ 02.
+  msg %wl_chan 15,6[000615]01,01.02,02. $+ $wordline(00,02,10,$gettok(%wl_players,6,124),2) $+ 02.15,6[000715]01,01.02,02. $+ $wordline(00,02,10,$gettok(%wl_players,7,124),2) $+ 02.15,6[000815]01,01.02,02. $+ $wordline(00,02,10,$gettok(%wl_players,8,124),2) $+ 02.15,6[000915]01,01.02,02. $+ $wordline(00,02,10,$gettok(%wl_players,9,124),2) $+ 02.15,6[001015]01,01.02,02. $+ $wordline(00,02,10,$gettok(%wl_players,10,124),2) $+ 02.
+  msg %wl_chan 15,6[001115]01,01.02,02. $+ $wordline(00,02,10,$gettok(%wl_players,11,124),2) $+ 02.15,6[001215]01,01.02,02. $+ $wordline(00,02,10,$gettok(%wl_players,12,124),2) $+ 02.15,6[001315]01,01.02,02. $+ $wordline(00,02,10,$gettok(%wl_players,13,124),2) $+ 02.15,6[001415]01,01.02,02. $+ $wordline(00,02,10,$gettok(%wl_players,14,124),2) $+ 02.15,6[001515]01,01.02,02. $+ $wordline(00,02,10,$gettok(%wl_players,15,124),2) $+ 02.
+  msg %wl_chan 15,6[001615]01,01.02,02. $+ $wordline(00,02,10,$gettok(%wl_players,16,124),2) $+ 02.15,6[001715]01,01.02,02. $+ $wordline(00,02,10,$gettok(%wl_players,17,124),2) $+ 02.15,6[001815]01,01.02,02. $+ $wordline(00,02,10,$gettok(%wl_players,18,124),2) $+ 02.15,6[001915]01,01.02,02. $+ $wordline(00,02,10,$gettok(%wl_players,19,124),2) $+ 02.15,6[002015]01,01.02,02. $+ $wordline(00,02,10,$gettok(%wl_players,20,124),2) $+ 02.
+  msg %wl_chan 15,6[002115]01,01.02,02. $+ $wordline(00,02,10,$gettok(%wl_players,21,124),2) $+ 02.15,6[002215]01,01.02,02. $+ $wordline(00,02,10,$gettok(%wl_players,22,124),2) $+ 02.15,6[002315]01,01.02,02. $+ $wordline(00,02,10,$gettok(%wl_players,23,124),2) $+ 02.15,6[002415]01,01.02,02. $+ $wordline(00,02,10,$gettok(%wl_players,24,124),2) $+ 02.15,6[002515]01,01.02,02. $+ $wordline(00,02,10,$gettok(%wl_players,25,124),2) $+ 02.
+  msg %wl_chan 15,6[002615]01,01.02,02. $+ $wordline(00,02,10,$gettok(%wl_players,26,124),2) $+ 02.15,6[002715]01,01.02,02. $+ $wordline(00,02,10,$gettok(%wl_players,27,124),2) $+ 02.15,6[002815]01,01.02,02. $+ $wordline(00,02,10,$gettok(%wl_players,28,124),2) $+ 02.15,6[002915]01,01.02,02. $+ $wordline(00,02,10,$gettok(%wl_players,29,124),2) $+ 02.15,6[003015]01,01.02,02. $+ $wordline(00,02,10,$gettok(%wl_players,30,124),2) $+ 02.
+  msg %wl_chan 15,6[003115]01,01.02,02. $+ $wordline(00,02,10,$gettok(%wl_players,31,124),2) $+ 02.15,6[003215]01,01.02,02. $+ $wordline(00,02,10,$gettok(%wl_players,32,124),2) $+ 02.15,6[003315]01,01.02,02. $+ $wordline(00,02,10,$gettok(%wl_players,33,124),2) $+ 02.15,6[003415]01,01.02,02. $+ $wordline(00,02,10,$gettok(%wl_players,34,124),2) $+ 02.15,6[003515]01,01.02,02. $+ $wordline(00,02,10,$gettok(%wl_players,35,124),2) $+ 02.
+  msg %wl_chan 15,6[003615]01,01.02,02. $+ $wordline(00,02,10,$gettok(%wl_players,36,124),2) $+ 02.15,6[003715]01,01.02,02. $+ $wordline(00,02,10,$gettok(%wl_players,37,124),2) $+ 02.15,6[003815]01,01.02,02. $+ $wordline(00,02,10,$gettok(%wl_players,38,124),2) $+ 02.15,6[003915]01,01.02,02. $+ $wordline(00,02,10,$gettok(%wl_players,39,124),2) $+ 02.15,6[004015]01,01.02,02. $+ $wordline(00,02,10,$gettok(%wl_players,40,124),2) $+ 02.
+  msg %wl_chan 15,6[004115]01,01.02,02. $+ $wordline(00,02,10,$gettok(%wl_players,41,124),2) $+ 02.15,6[004215]01,01.02,02. $+ $wordline(00,02,10,$gettok(%wl_players,42,124),2) $+ 02.15,6[004315]01,01.02,02. $+ $wordline(00,02,10,$gettok(%wl_players,43,124),2) $+ 02.15,6[004415]01,01.02,02. $+ $wordline(00,02,10,$gettok(%wl_players,44,124),2) $+ 02.15,6[004515]01,01.02,02. $+ $wordline(00,02,10,$gettok(%wl_players,45,124),2) $+ 02.
+  msg %wl_chan 15,6[004615]01,01.02,02. $+ $wordline(00,02,10,$gettok(%wl_players,46,124),2) $+ 02.15,6[004715]01,01.02,02. $+ $wordline(00,02,10,$gettok(%wl_players,47,124),2) $+ 02.1,1 $+ $str(.,17) $+ 15,6[004815]01,01.02,02. $+ $wordline(00,02,10,$gettok(%wl_players,48,124),2) $+ 02.15,6[004915]01,01.02,02. $+ $wordline(00,02,10,$gettok(%wl_players,49,124),2) $+ 02.
+  msg %wl_chan 1,1.....................................................................................
+}
+
 alias passes {
   if (%wl_pass == 1) {
     set %wl_ps 15,12[P]|05,12[P] 
@@ -46,24 +61,31 @@ alias passes {
 alias pitstop {
   dec %wl_pit
   if (%wl_pit == 1) {
+    timer53 -p
+    timer54 -p
     set %wl_pitstops 15,12[S]|01,12[S]
     splay wl_r3_pitstop_1.mp3
     timer 1 15 set %wl_mode 1
   }
   if (%wl_pit == 0) {
+    did -b wl 50
+    timer53 -p
+    timer54 -p
     set %wl_pitstops 01,12[S]|01,12[S]
     splay wl_r3_pitstop_2.mp3
     timer 1 15 set %wl_mode 1
   }
   msg %wl_chan 02,02...00,06( $+ $f_time(%j) $+ )02,02... $+ $gettok(%wl_pitstops,1,124) $+ 02,02.$+ $gettok(%wl_pitstops,2,124) $+ 02,02... 00,00play wl_r3_pitstop_1.mp3
   msg %wl_chan 02,02...10,12|12.10|12.10|12.10|12.10|12.10|12.10|12.10|12.10|12.10|12.10|12.10|12.10|12.10|12.10|12.10|02,02.00,12(0:15)02,02...
-  timer -m 1 750 answers
+  timer -m 1 750 players
   timer 1 10 msg %wl_chan 02,02...10,12|12.10|12.10|12.10|12.10|12.10|02,02.10|02.10|02.10|02.10|02.10|02.10|02.10|02.10|02.10|02.10|02,02.00,12(0:05)02,02...
   timer 1 11 msg %wl_chan 02,02...10,12|12.10|12.10|12.10|12.10|02,02.10|02.10|02.10|02.10|02.10|02.10|02.10|02.10|02.10|02.10|02.10|02,02.00,12(0:04)02,02...
   timer 1 12 msg %wl_chan 02,02...10,12|12.10|12.10|12.10|02,02.10|02.10|02.10|02.10|02.10|02.10|02.10|02.10|02.10|02.10|02.10|02.10|02,02.00,12(0:03)02,02...
   timer 1 13 msg %wl_chan 02,02...10,12|12.10|12.10|02,02.10|02.10|02.10|02.10|02.10|02.10|02.10|02.10|02.10|02.10|02.10|02.10|02.10|02,02.00,12(0:02)02,02...
   timer 1 14 msg %wl_chan 02,02...10,12|12.10|02,02.10|02.10|02.10|02.10|02.10|02.10|02.10|02.10|02.10|02.10|02.10|02.10|02.10|02.10|02,02.00,12(0:01)02,02...
   timer 1 15 msg %wl_chan 02,02...00,06( $+ $f_time(%j) $+ )02,02... $+ $gettok(%wl_pitstops,1,124) $+ 02,02.$+ $gettok(%wl_pitstops,2,124) $+ 02,02...
+  timer 1 15 timer53 -r
+  timer 1 15 timer54 -r
   timer 1 15 msg %wl_chan 0,2 %wl_question 
 }
 
@@ -241,10 +263,26 @@ on 1:dialog:wl:sclick:*: {
     }
   }
 
+  if ($did == 8) {
+    set %players - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    set %player1
+    set %c
+    set %wl_reg 2
+    splay wl_r1_begin.mp3
+    msg %wl_chan 00,02...| Чтобы зарегистрироваться в игре, отправьте "й" или "q" в приват $me 00,02|... 0,0play wl_r1_begin.mp3
+  }
+
+  if ($did == 11) {
+    splay wl_r1_begin.mp3
+    msg %wl_chan 0,0play wl_r1_begin.mp3
+    timer 1 2 players
+  }
+
   if ($did == 12) {
     set %wl_num_q 0
     splay wl_r1_start.mp3
     msg %wl_chan 0,0play wl_r1_start.mp3
+    timer 1 2 players
   }
 
   if ($did == 13) {
@@ -357,7 +395,7 @@ on 1:dialog:wl:sclick:*: {
     splay wl_r3_time.mp3
     15sec_timer
     timer 1 15 msg %wl_chan 02,02...00,06( $+ $f_time(%j) $+ )02,02... $+ $gettok(%wl_pitstops,1,124) $+ 02,02.$+ $gettok(%wl_pitstops,2,124) $+ 02,02...
-    timer 1 15 timer
+    timer 1 15 timergame
     timer 1 15 set %wl_mode 1
     timer 1 16 msg %wl_chan 0,2 %wl_question 
   }
@@ -370,6 +408,28 @@ on 1:dialog:wl:sclick:*: {
     pitstop
     timer1000 -p
   }
+
+}
+
+on *:TEXT:*:?: {
+
+  if (%khsm_reg == 2) && ($findtok(%player1,$nick,1,32) == $null) {
+    var %1 $1
+    if (%1 == й) || (%1 == q) {
+      set %player1 %player1 $nick
+      msg $nick 00,02...| Укажите номер (от 1 до 49), который вы хотите занять 00,02|...
+    }
+  }
+
+  if (%khsm_reg == 3) && ($nick == $gettok(%player1,1,32)) || ($nick == $gettok(%player1,2,32)) || ($nick == $gettok(%player1,3,32)) || ($nick == $gettok(%player1,4,32)) || ($nick == $gettok(%player1,5,32)) || ($nick == $gettok(%player1,6,32)) || ($nick == $gettok(%player1,7,32)) || ($nick == $gettok(%player1,8,32)) || ($nick == $gettok(%player1,9,32)) || ($nick == $gettok(%player1,10,32)) {
+    /notice $me $nick — $1
+    set %c %c $nick
+    if ($numtok(%c, 32) == 10) {
+      set %khsm_reg 0
+      msg %khsm_chan Регистрация на игру завершена. Начнём через несколько минут.
+    }
+  }
+
 
 }
 
@@ -489,4 +549,25 @@ alias -l ans_load {
   var %wl_ans $read(scripts\wl\wl_answers.txt, $rand(1, $lines(scripts\wl\wl_answers.txt)))
   write -dl $+ $readn scripts\wl\wl_answers.txt
   set %wl_answers %wl_ans
+}
+
+alias -l timergame {
+  set %j 180
+  set %p 0
+  set %v 1000
+  set %b 1000
+  timer53 180 1 minus2
+  timer54 180 1 didushka2
+}
+
+alias -l minus2 {
+  set %j $puttok(%j, $calc(%j - 1), 1, 32)
+  if (%j == 0) {
+    splay wl_r3_end.mp3
+    msg %tbj_chan 46,46 530:0040  0,0play wl_r3_end.mp3
+  }
+}
+
+alias -l didushka2 {
+  did -ra wl 54 $f_time(%j,n:ss)
 }
