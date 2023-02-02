@@ -64,7 +64,6 @@ alias pitstop {
   timer 1 13 msg %wl_chan 02,02...10,12|12.10|12.10|02,02.10|02.10|02.10|02.10|02.10|02.10|02.10|02.10|02.10|02.10|02.10|02.10|02.10|02,02.00,12(0:02)02,02...
   timer 1 14 msg %wl_chan 02,02...10,12|12.10|02,02.10|02.10|02.10|02.10|02.10|02.10|02.10|02.10|02.10|02.10|02.10|02.10|02.10|02.10|02,02.00,12(0:01)02,02...
   timer 1 15 msg %wl_chan 02,02...00,06( $+ $f_time(%j) $+ )02,02... $+ $gettok(%wl_pitstops,1,124) $+ 02,02.$+ $gettok(%wl_pitstops,2,124) $+ 02,02...
-  timer 1 15 starttime
   timer 1 15 msg %wl_chan 0,2 %wl_question 
 }
 
@@ -209,6 +208,18 @@ on 1:dialog:wl:sclick:*: {
   if ($did == 3) {
     splay wl_close_30.mp3
     msg %wl_chan 0,0play wl_close_30.mp3
+    timer 1 2 msg %wl_chan 2,2.......10,2|2.....10|2.....10|2.....10|2.....10|2,2..00WINNING LINES2,2..10|10,22.....10|2.....10|2.....10|2.....10|2,2.......
+    timer 1 5 msg %wl_chan 2,2.......10,2|2.00Задавал вопросы игрокам $+ $str(.,30) $+ Вадим Заяц.10|2,2.......
+    timer 1 8 msg %wl_chan 2,2.......10,2|2.00Придумывал задания $+ $str(.,35) $+ Вадим Заяц.10|2,2.......
+    timer 1 11 msg %wl_chan 2,2.......10,2|2.00Музыку написал $+ $str(.,35) $+ Keith Strachan.10|2,2.......
+    timer 1 14 msg %wl_chan 2,2.......10,2|2.00Сделал скрипт для игры $+ $str(.,24) $+ Дмитрий Данилович.10|2,2.......
+    timer 1 17 msg %wl_chan 2,2.......10,2|2.00Помогли найти косяки $+ $str(.,35) $+ Тестер 1.10|2,2.......
+    timer 1 29 msg %wl_chan 2,2.......10,2|2.....10|2.....10|2.....10|2..00Gamerboy productions 20232,2..10|2.....10|2.....10|2.....10|2,2.......
+  }
+
+  if ($did == 4) {
+    splay wl_preclose.mp3
+    msg %wl_chan 0,0play wl_preclose.mp3
   }
 
   if ($did == 5) {
@@ -237,6 +248,7 @@ on 1:dialog:wl:sclick:*: {
   }
 
   if ($did == 13) {
+    base_r1
     inc %wl_num_q
     did -ra wl 14 %wl_num_q
   }
@@ -244,6 +256,11 @@ on 1:dialog:wl:sclick:*: {
   if ($did == 15) {
     splay wl_r1_question.mp3
     msg %wl_chan 0,0play wl_r1_question.mp3
+    var %i 1
+    while (%i <= $numtok(%wl_question,126)) {
+      msg %wl_chan 00,02...| $a_center($gettok(%wl_question,%i,126),%wl_ql,00,02) 00,02|...
+      inc %i
+    }
   }
 
   if ($did == 16) {
@@ -272,6 +289,16 @@ on 1:dialog:wl:sclick:*: {
     msg %wl_chan 0,0play wl_r1_top.mp3
   }
 
+  if ($did == 25) {
+    splay wl_r1_end.mp3
+    msg %wl_chan 0,0play wl_r1_end.mp3
+  }
+
+  if ($did == 27) {
+    splay wl_r2_begin.mp3
+    msg %wl_chan 0,0play wl_r2_begin.mp3
+  }
+
   if ($did == 28) {
     set %wl_losers 0
     splay wl_r2_1.mp3
@@ -286,6 +313,11 @@ on 1:dialog:wl:sclick:*: {
     timer 1 3 msg %wl_chan 2,2.......10,2|2.....10|2.....10|2.....10,12|12.....10|12.....10|2,2.00022,2.10,12|12.....10|12.....10,12|10,22.....10|2.....10|2.....10|2,2.......
     timer 1 4 msg %wl_chan 2,2.......10,2|2.....10|2.....10|2.....10|2.....10,12|12.....10|2,2.00012,2.10,12|12.....10,12|10,22.....10|2.....10|2.....10|2.....10|2,2.......
     timer 1 5 msg %wl_chan 2,2.......10,2|2.....10|2.....10|2.....10|2.....10|2,2..00Время вышло!2,2..10|10,22.....10|2.....10|2.....10|2.....10|2,2.......
+  }
+
+  if ($did == 31) {
+    splay wl_r2_correct.wav
+    msg %wl_chan 0,0play wl_r2_correct.wav
   }
 
   if ($did == 33) {
@@ -325,7 +357,7 @@ on 1:dialog:wl:sclick:*: {
     splay wl_r3_time.mp3
     15sec_timer
     timer 1 15 msg %wl_chan 02,02...00,06( $+ $f_time(%j) $+ )02,02... $+ $gettok(%wl_pitstops,1,124) $+ 02,02.$+ $gettok(%wl_pitstops,2,124) $+ 02,02...
-    timer 1 15 starttime
+    timer 1 15 timer
     timer 1 15 set %wl_mode 1
     timer 1 16 msg %wl_chan 0,2 %wl_question 
   }
@@ -337,10 +369,6 @@ on 1:dialog:wl:sclick:*: {
   if ($did == 50) {
     pitstop
     timer1000 -p
-  }
-
-  if ($did == 14) {
-    wronganswers
   }
 
 }
@@ -431,43 +459,34 @@ on *:TEXT:*:%wl_chan: {
   }
 }
 
-alias -l questionbase {
-  var %wl_q $read(scripts\wl\wl_base.txt, $rand(1, $lines(scripts\wl\wl_base.txt)))
-  write -dl $+ $readn scripts\wl\wl_base.txt
+alias -l base_r1 {
+  var %wl_q $read(scripts\wl\wl_base_r1.txt, $rand(1, $lines(scripts\wl\wl_base_r1.txt)))
+  write -dl $+ $readn scripts\wl\wl_base_r1.txt
+  set %wl_question $gettok(%wl_q, 1, 124)
+  set %wl_answer $gettok(%wl_q, 2, 124)
+  var %tmp 45
+
+  set %wl_ql $calc(%tmp + 25)
+  set %wl_question $questionize(%wl_question,%wl_ql)
+
+  did -ra wl 23 %wl_question
+  did -ra wl 24 %wl_answer
+}
+
+alias -l base_r3 {
+  var %wl_q $read(scripts\wl\wl_base_r3.txt, $rand(1, $lines(scripts\wl\wl_base_r3.txt)))
+  write -dl $+ $readn scripts\wl\wl_base_r3.txt
   set %wl_question $gettok(%wl_q, 1, 124)
   set %wl_answer $gettok(%wl_q, 2, 124)
   set %wl_number $gettok(%wl_q, 3, 124)
+
+  did -ra wl 51 %wl_question
+  did -ra wl 52 %wl_answer
+  did -ra wl 53 %wl_number
 }
 
 alias -l ans_load {
   var %wl_ans $read(scripts\wl\wl_answers.txt, $rand(1, $lines(scripts\wl\wl_answers.txt)))
   write -dl $+ $readn scripts\wl\wl_answers.txt
   set %wl_answers %wl_ans
-}
-
-alias starttime {
-  timer1000 180 1 minus1
-}
-
-alias minus {
-  set %j 180
-  set %p 0
-  set %v 1000
-  set %b 1000
-  timer997 180 1 minus1
-  timer998 180 1 didushka1
-}
-
-alias minus1 {
-  set %j $puttok(%j, $calc(%j - 1), 1, 32)
-  if (%j == 0) {
-    splay wl_r3_end.mp3
-    msg %wl_chan 02,02...00,06(0:00)02,02... $+ $gettok(%wl_pitstops,1,124) $+ 02,02.$+ $gettok(%wl_pitstops,2,124) $+ 02,02... 00,00play wl_r3_end.mp3
-    timers off
-    set %wl_mode 0
-  }
-}
-
-alias didushka1 {
-  did -ra wl 54 $f_time(%j,n:ss)
 }
